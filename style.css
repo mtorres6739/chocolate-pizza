@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope&family=Yellowtail&display=swap');
+/* GRID AREA FOR OVERALL PAGE LAYOUT*/
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  width: 100%;
+  height: 100vh;
+
+  display: grid;
+  justify-self: center;
+  align-self: center;
+  grid-template-areas:
+    '. header header .'
+    '. main main .'
+    '. footer footer .';
+  grid-template-columns: 200px 1fr 1fr 200px;
+  grid-template-rows: 150px 1fr 70px;
+}
+
+header,
+footer,
+main {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  border: none;
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
+/* GRID AREA FOR HEADER*/
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    'logo . . icons'
+    'divider divider divider divider';
+}
+
+
+.logo {
+  grid-area: logo;
+  justify-self: left;
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-template-areas:
+    'img h1'
+    'img h2'
+  ;
+}
+
+.img {
+  grid-area: img;
+  justify-self: left;
+}
+
+.logo h1 {
+  grid-area: h1;
+  justify-self: left;
+  font-family: 'Yellowtail', cursive;
+  font-size: 36px;
+}
+
+.logo h2 {
+  grid-area: h2;
+  justify-self: left;
+  font-family: 'Arial Narrow';
+  font-size: 12px;
+  margin-bottom: 25px;
+}
+
+.icons {
+  grid-area: icons;
+  justify-self: right;
+}
+
+.divider {
+  grid-area: divider;
+  justify-self: stretch;
+  background-image: url("./img/hr-img.png");
+  height: 25px;
+}
+
+/* GRID AREA FOR MAIN*/
+
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  grid-template-areas:
+    'title title title title'
+    'sub-title . . print'
+    'hero-img hero-img hero-img hero-img'
+    'content content content content'
+    'recipe recipe recipe recipe'
+    'divider divider divider divider'
+    'recipe-foot recipe-foot recipe-foot recipe-foot'
+  ;
+}
+
+
+.title {
+  grid-area: title;
+  justify-self: left;
+}
+
+.title h1 {
+  font-family: 'Oswald', sans-serif;
+  font-stretch: ultra-condensed;
+  font-weight: 600;
+  font-size: 48px;
+  margin-top: 40px;
+  margin-bottom: -10px;
+}
+
+.sub-title h2 {
+  font-family: 'Arial Narrow';
+  color: gray;
+  font-size: 12px;
+  margin-bottom: 50px;
+}
+
+.sub-title {
+  grid-area: sub-title;
+  justify-self: left;
+}
+
+.print {
+  grid-area: print;
+  color: gray;
+  justify-self: right;
+}
+
+.print img {
+  height: 20px;
+}
+
+.hero-img {
+  grid-area: hero-img;
+  justify-self: stretch;
+}
+
+.hero-img img {
+  width: 100%;
+}
+
+.content {
+  grid-area: content;
+}
+
+.content p {
+  font-size: 16px;
+  line-height: 1.2em;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-indent: 20px;
+}
+/* GRID AREA FOR RECIPE BOX*/
+
+.recipe {
+  grid-area: recipe;
+  justify-self: center;
+  background-image: url("./img/list-bg.png");
+  background-size: 1040px;
+  color: black;
+  justify-self: stretch;
+  height: 350px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: grid;
+  font-family: 'Comic Sans MS';
+  font-size: 20px;
+  padding: 36px;
+  line-height: 1.85em;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'form1 form2'
+  ;
+}
+
+.form1 {
+  grid-area: form1;
+}
+
+.form2 {
+  grid-area: form2;
+}
+
+input:checked+label {
+  text-decoration: line-through;
+}
+
+.recipe div {
+  border: none;
+  justify-self: left;
+}
+
+/* GRID AREA FOR RECIPE FOOTER*/
+
+.recipe-foot {
+  grid-area: recipe-foot;
+  display: grid;
+  grid-template-columns: 100px 1fr 200px;
+  grid-template-areas:
+    'pic bio btn'
+    'icon icon icon'
+  ;
+}
+
+.pic {
+  grid-area: pic;
+  justify-self: left;
+}
+
+.pic img {
+  height: 100px;
+}
+
+.bio {
+  grid-area: bio;
+  margin-left: 20px;
+  justify-self: stretch;
+  border: none;
+}
+
+.bio h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.bio p {
+  line-height: 1.4em;
+  font-size: 18px;
+}
+
+.btn {
+  grid-area: btn;
+  justify-self: stretch;
+  border: none;
+}
+
+button {
+  background-color: rgb(188, 112, 88);
+  border: none;
+  border-radius: 0px;
+  color: white;
+  padding: 22px 32px;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.icon {
+  grid-area: icon;
+  justify-self: center;
+  margin-top: 50px;
+  border: solid 2px white;
+}
+
+/* GRID AREA FOR FOOTER */
+
+footer {
+  text-align: center;
+  color: gray;
+}
